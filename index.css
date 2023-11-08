@@ -44,3 +44,8 @@
 .restaurant-logo {
   width: 100%;
 }
+/* just give a space in top rated res */
+.filter-btn {
+  margin: 10px;
+  cursor: pointer;
+}

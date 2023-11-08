@@ -1,92 +1,8 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-// JSX => it is not HTML in Js =>HTML LIKE SYNTAX=> it looks like html
-// JSX (transpiled before it reaches the Js) - PARSEL -BABEL
-// JSX => Babel transpiled it to React.createElement => ReactElement-Js Object => HTMLElement(render)
-/*
-Header
-  -logo
-  -navbar
-Body
-  - search
-  - RestaurantContainer
-    - RestaurantCard
-        -cloudinaryImageId
-        -name of res,Star Rating,cuisine,Delivery tie etc
-Footer
-  - Copyright
-  - Links
-  - Address
-  - Contact
-
-
-
-*/
-
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img className="logo" src={require("./assets/logo.jpg")} />
-      </div>
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-const RestaurantCard = (props) => {
-  // console.log(props);
-
-  const { resData } = props;
-
-  //destructure it
-  const {
-    name,
-    deliveryTime,
-    cloudinaryImageId,
-    cuisines,
-    costForTwo,
-    avgRating,
-  } = props.restaurant;
-  return (
-    <div className="restaurant-card" style={{ backgroundColor: "#f0f0f0" }}>
-      <img
-        className="restaurant-logo"
-        src={
-          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-          cloudinaryImageId
-        }
-        alt="image of food"
-      />
-      <h3> {name}</h3>
-
-      {/* .join(", ") */}
-      <h4>{cuisines.join(", ")}</h4>
-      <h4>{costForTwo}</h4>
-      <h4>{avgRating}</h4>
-      <h4> {deliveryTime} minutes</h4>
-
-      {/* <h4>{resData.deliveryTime}in minutes</h4> */}
-    </div>
-  );
-};
-
 const RestaurantFoodList = [
   {
     id: 1,
     name: "Pulusu Ruchulu",
     costForTwo: "₹300 for two",
-    description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-    category: "men's clothing",
     cuisines: [
       "Andhra",
       "Biryani",
@@ -174,7 +90,7 @@ const RestaurantFoodList = [
   {
     id: 10,
     name: "Indiana Burgers",
-    costForTwo: 5500,
+    costForTwo: "₹150 for two",
     deliveryTime: 29,
     cuisines: ["Burgers", "American", "Fast Food", "Beverages", "Desserts"],
     cloudinaryImageId: "bverioshy8kuldk13oom",
@@ -285,28 +201,4 @@ const RestaurantFoodList = [
     avgRating: 4.1,
   },
 ];
-// not using keys(not acceptable) <<<< index as key => use is it last result<<<<< unique (best practice)
-const Body = () => {
-  return (
-    <div className="body">
-      <div className="search">Search</div>
-      <div className="restaurant-container">
-        {/* map function you can use forloop also */}
-        {RestaurantFoodList.map((restaurant) => (
-          <RestaurantCard key={restaurant.id} restaurant={restaurant} />
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const AppLayout = () => {
-  return (
-    <div className="app">
-      <Header />
-      <Body />
-    </div>
-  );
-};
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+export default RestaurantFoodList;
