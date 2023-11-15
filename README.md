@@ -70,6 +70,9 @@ import {Component} from "path";
 - they are normal js Function- written by fb developer
 - i install in react right.In a node_modules,i got all the utility function into a code
 - there are 2 most important hooks
+
   - 90 % of use this hooks
   - useState() =>Superpowerful State Variables in react
   - useEffect()
+
+- I use shimmer UI => while loadng it shows fake cards

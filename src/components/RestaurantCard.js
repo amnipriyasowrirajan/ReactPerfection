@@ -13,7 +13,7 @@ const RestaurantCard = (props) => {
     cuisines,
     costForTwo,
     avgRating,
-  } = props.restaurant;
+  } = resData?.info;
   return (
     <div className="restaurant-card" style={{ backgroundColor: "#f0f0f0" }}>
       <img
@@ -25,11 +25,9 @@ const RestaurantCard = (props) => {
 
       {/* .join(", ") */}
       <h4>{cuisines.join(", ")}</h4>
-      <h4>{costForTwo}</h4>
       <h4>{avgRating} stars</h4>
-      <h4> {deliveryTime} minutes</h4>
-
-      {/* <h4>{resData.deliveryTime}in minutes</h4> */}
+      <h4>{costForTwo} </h4>
+      <h4>{deliveryTime} minutes</h4>
     </div>
   );
 };
