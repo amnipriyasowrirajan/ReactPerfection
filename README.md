@@ -73,6 +73,22 @@ import {Component} from "path";
 
   - 90 % of use this hooks
   - useState() =>Superpowerful State Variables in react
-  - useEffect()
+  - useEffect() =>If there is no dependency array => useEffect is called on every render
+    => If dependency array is empty = [] => useEffect is called on Initial render (Just Once)
+    => If dependency array is [btnName] => called everytime btnName is updated
 
 - I use shimmer UI => while loadng it shows fake cards
+
+- Here i use createBrowserRouter for further details click on below link and read it out then you get a clear view
+  https://reactrouter.com/en/main/routers/create-browser-router
+
+- this outlet will be filled with the children according to the path
+  <Outlet />
+- Link=> it works similar like a anchor tag.
+
+# 2 types of Routing in web apps
+
+- Client Side Routing => it reloads components
+- Server Side Routing => it reloads the whole page(index.html,cotact.html)
+
+# useParams => hooks

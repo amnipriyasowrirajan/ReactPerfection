@@ -1,6 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   // local state variable      - super powerful variable
@@ -22,11 +23,7 @@ const Body = () => {
     );
 
     const json = await data.json();
-    // console.log(json);
 
-    // put the api data
-    // json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants
-    // OPtional chaining =>?
     setListOfRestaurant(
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
@@ -52,9 +49,6 @@ const Body = () => {
           />
           <button
             onClick={() => {
-              // Filter the restaurant cards and update the ui
-              // searchText here
-
               console.log(searchText);
 
               const filteredRestaurant = listOfRestaurant.filter((res) =>
@@ -71,7 +65,7 @@ const Body = () => {
           onClick={() => {
             // Filter Logic here
             const filteredList = listOfRestaurant.filter(
-              (res) => res.info.avgRating > 3
+              (res) => res.info.avgRating > 4.1
             );
             setListOfRestaurant(filteredList);
           }}
@@ -81,7 +75,12 @@ const Body = () => {
       </div>
       <div className="restaurant-container">
         {filteredRestaurant.map((restaurant) => (
-          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+          <Link
+            key={restaurant.info.id}
+            to={"/restaurants/" + restaurant.info.id}
+          >
+            <RestaurantCard resData={restaurant} />
+          </Link>
         ))}
       </div>
     </div>
