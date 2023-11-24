@@ -11,7 +11,7 @@ https://parceljs.org/
 - Caching - Faster Builds
 - Image Optimization
 - Minification
-- Bundling
+- Bundling - all the files minified
 - Compression
 - Consistent Hashing
 - Code Splitting
@@ -91,4 +91,17 @@ import {Component} from "path";
 - Client Side Routing => it reloads components
 - Server Side Routing => it reloads the whole page(index.html,cotact.html)
 
-# useParams => hooks
+# useParams => hooks => for id
+
+- Chunking
+- Code Splitting
+- Dynamic Bundling
+- i use dynamic import
+- lazy loading=>when you are app is load it will not load for grocery(we wont load everything directly.load it when required)
+- On Demand Loading=> whenever there is a demand whenever the user is going on the particular page then only load the page
+- Initialially im not loading when i go to the grocery page i load it.
+  //-----------------------------------------
+- lazy is a function is given to us by react
+
+- I used lazy loading in grocery page
+- i used suspence
