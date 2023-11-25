@@ -9,13 +9,6 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 //import Grocery from "./components/Grocery";
 
-// Chunking
-// Code Splitting
-// Dynamic Bundling
-//lazy loading=>when you are app is load it will not load for grocery(we wont load everything directly.load it when required)
-// On Demand Loading=> whenever there is a demand whenever the user is going on the particular page then only load the page
-// Initialially im not loading when i go to the grocery page i load it.
-//-----------------------------------------
 // lazy is a function is given to us by react
 const Grocery = lazy(() => import("./components/Grocery"));
 

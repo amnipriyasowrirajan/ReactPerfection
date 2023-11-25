@@ -105,3 +105,12 @@ import {Component} from "path";
 
 - I used lazy loading in grocery page
 - i used suspence
+
+- I use PostCSS and TailwindCSS
+
+npm install -D tailwindcss postcss
+npx tailwindcss init
+
+- create a .postcssrc file
+
+- check out the link https://tailwindcss.com/docs/guides/parcel
