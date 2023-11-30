@@ -1,8 +1,9 @@
-import RestaurantCard from "./RestaurantCard";
-import { useEffect, useState } from "react";
+import RestaurantCard, { withDiscountTag } from "./RestaurantCard";
+import { useEffect, useState, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   // local state variable      - super powerful variable
@@ -11,8 +12,8 @@ const Body = () => {
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
 
+  const RestaurantCardDiscount = withDiscountTag(RestaurantCard);
   // Whenever state variable update , react triggers a reconcilation cycle (re-renders the component)
-  console.log("Body rendered");
 
   useEffect(() => {
     fetchData();
@@ -41,6 +42,8 @@ const Body = () => {
         Looks like you are offline!!! Please check your internel connection
       </h1>
     );
+
+  const { loggedInUser, setUserName } = useContext(UserContext);
 
   return listOfRestaurant?.length === 0 ? (
     <Shimmer />
@@ -84,6 +87,14 @@ const Body = () => {
             Top Rated Restaurant
           </button>
         </div>
+        <div className="toprated m-4 p-4 flex items-center">
+          <label>UserName : </label>
+          <input
+            className="border border-black p-2"
+            value={loggedInUser}
+            onChange={(e) => setUserName(e.target.value)}
+          />
+        </div>
       </div>
       <div className="flex flex-wrap">
         {filteredRestaurant?.map((restaurant) => (
@@ -91,7 +102,13 @@ const Body = () => {
             key={restaurant.info.id}
             to={"/restaurants/" + restaurant.info.id}
           >
-            <RestaurantCard resData={restaurant} />
+            {/* if the restaurant is discountTag then add a discountTag label to it */}
+
+            {restaurant.info.discountTag ? (
+              <RestaurantCardDiscount resData={restaurant} />
+            ) : (
+              <RestaurantCard resData={restaurant} />
+            )}
           </Link>
         ))}
       </div>

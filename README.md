@@ -114,3 +114,8 @@ npx tailwindcss init
 - create a .postcssrc file
 
 - check out the link https://tailwindcss.com/docs/guides/parcel
+
+- Here i use High Order Function to enhance it -> Discount Label
+
+- Here i use Lifting the state in React=>Remove state from both of them, move it to their closest common parent, and then pass it down to them via props.
+- Avoid Props Drilling when you use large scale application=> occurs when a parent component generates its state and passes it down as props to its children components that do not consume the props – instead, they only pass it down to another component that finally consumes it.
