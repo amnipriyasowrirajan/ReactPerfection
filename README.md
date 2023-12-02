@@ -119,3 +119,16 @@ npx tailwindcss init
 
 - Here i use Lifting the state in React=>Remove state from both of them, move it to their closest common parent, and then pass it down to them via props.
 - Avoid Props Drilling when you use large scale application=> occurs when a parent component generates its state and passes it down as props to its children components that do not consume the props – instead, they only pass it down to another component that finally consumes it.
+
+- Redux offers two libraries =>https://redux.js.org/
+  - React-Redux
+  - Redux Toolkit => The Redux Toolkit package is intended to be the standard way to write Redux logic.
+
+# Redux Toolkit
+
+- Install @reduxjs/toolkit and react-redux
+- Build Our store
+- Connect our store to our app
+- Slice (cartSlice)
+- dispatch(action)
+- Selector
