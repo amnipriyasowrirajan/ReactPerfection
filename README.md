@@ -132,3 +132,45 @@ npx tailwindcss init
 - Slice (cartSlice)
 - dispatch(action)
 - Selector
+
+# Types of testing (developer)
+
+- Unit Testing
+- Integration Testing
+- End to End Testing => e2e Testing
+
+# Setting up testing in my app
+
+=> React Library Testing (https://testing-library.com/docs/react-testing-library/intro/)
+
+# install react testing library => npm i -D @testing-library/react
+
+=> Jest(Jest is a delightful JavaScript Testing Framework with a focus on simplicity.)=>(https://jestjs.io/)
+
+https://jestjs.io/docs/getting-started
+
+# install jest =>npm i -D jest
+
+# install Babel Dependencies=> npm install --save-dev babel-jest @babel/core @babel/preset-env
+
+- create babel config file
+
+https://parceljs.org/languages/javascript/#usage-with-other-tools
+
+# study it
+
+- https://parceljs.org/languages/javascript/#babel
+
+- Configure Parcel config file to disable default babel transpilation
+
+- create a new file .parcelrc
+
+- npm run test
+
+# Jest Configuration=>(npx jest --init)
+
+# Install jsdom library (https://testing-library.com/docs/react-testing-library/setup#jest-28)
+
+- If you're using Jest 28 or later, jest-environment-jsdom package now must be installed separately.
+
+- npm install --save-dev jest-environment-jsdom

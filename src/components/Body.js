@@ -79,9 +79,10 @@ const Body = () => {
             onClick={() => {
               // Filter Logic here
               const filteredList = listOfRestaurant.filter(
-                (res) => res.info.avgRating > 4
+                (res) => res.info.avgRating > 4.1
               );
-              setListOfRestaurant(filteredList);
+
+              setFilteredRestaurant(filteredList);
             }}
           >
             Top Rated Restaurant
