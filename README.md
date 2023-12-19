@@ -174,3 +174,14 @@ https://parceljs.org/languages/javascript/#usage-with-other-tools
 - If you're using Jest 28 or later, jest-environment-jsdom package now must be installed separately.
 
 - npm install --save-dev jest-environment-jsdom
+
+- Install this Library =>npm i @babel/preset-react => to make JSX work in test cases
+- Include @babel/preset-react inside my babel Config
+  [("@babel/preset-react", { runtime: "automatic" })],
+- Install @testing-library/jest-dom => to access toBeInTheDocument()
+- npm i -D @testing-library/jest-dom
+
+# integration Testing in Search Bar
+
+- changes in package.json
+- npm run watch-test

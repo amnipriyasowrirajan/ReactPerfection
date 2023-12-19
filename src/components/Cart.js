@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import ItemList from "./ItemList";
 import { clearCart } from "../utils/cartSlice";
 import { useDispatch } from "react-redux";
+import emptyCart from "../assets/empty_cart.png";
 //import ItemList from "./ItemList";
 
 const Cart = () => {
@@ -29,7 +30,8 @@ const Cart = () => {
         </button>
         {cartItems.length === 0 && (
           <div>
-            <img className="w-45 " src={require("../assets/empty_cart.png")} />
+            {/* <img className="w-45 " src={require("../assets/empty_cart.png")} /> */}
+            <img className="w-45" src={emptyCart} />
             <h1>Cart is empty. Add Items to the Cart!</h1>
           </div>
         )}

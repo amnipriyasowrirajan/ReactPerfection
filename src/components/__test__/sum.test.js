@@ -1,8 +1,8 @@
 import { sum } from "../sum";
 
-text("Sum function should caculate the sum of tow numbers", () => {
-  const result = sum(4, 4);
+test("Sum function should caculate the sum of tow numbers", () => {
+  const result = sum(3, 4);
 
   // Assertion
-  expect(result).toBe(8);
+  expect(result).toBe(7);
 });
