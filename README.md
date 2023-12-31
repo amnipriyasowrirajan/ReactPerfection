@@ -1,4 +1,4 @@
-# React Excellence 🚀
+# Food Ordering App using React  🚀
 
 # Parcel
 
